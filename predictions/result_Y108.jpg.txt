@@ -1,0 +1,2 @@
+Prediction: Tumor
+Confidence: 94.87%
