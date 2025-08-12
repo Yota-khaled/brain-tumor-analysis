@@ -314,10 +314,8 @@ if uploaded_file is not None:
             st.subheader("Segmentation Result")
             st.image(pred_mask_binary[..., 0], caption="Predicted Segmentation Mask", use_container_width=True, clamp=True)
 
-            # تحويل الماسك إلى صورة للتنزيل
             mask_image = Image.fromarray((pred_mask_binary[..., 0] * 255).astype(np.uint8))
             
-            # حفظ الصورة وتنزيلها عند النقر على زر واحد
             output_image_path = os.path.join(output_dir, f"mask_{uploaded_file.name}")
             if st.download_button(
                 "Download Mask",
@@ -350,7 +348,6 @@ if uploaded_file is not None:
             show_box(f"Prediction: {pred_class}", "Result")
             show_box(f"Confidence: {confidence:.2%}", "Confidence")
 
-            # إنشاء محتوى النتيجة للتنزيل
             result_content = f"Prediction: {pred_class}\nConfidence: {confidence:.2%}"
             output_text_path = os.path.join(output_dir, f"result_{uploaded_file.name}.txt")
             

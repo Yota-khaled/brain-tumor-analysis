@@ -1,0 +1,2 @@
+Prediction: No Tumor
+Confidence: 98.60%
